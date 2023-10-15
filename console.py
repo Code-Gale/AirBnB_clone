@@ -6,6 +6,7 @@ from models import storage
 import re
 import json
 
+
 class HBNBCommand(cmd.Cmd):
     """
     class for the console interpreter.
@@ -100,7 +101,8 @@ class HBNBCommand(cmd.Cmd):
             if args[0] not in ["BaseModel"]:
                 print("** class doesn't exist **")
                 return
-            filtered_objs = [str(obj) for key, obj in obj_dict.items() if args[0] in key]
+            filtered_objs = [str(obj) for key,
+                             obj in obj_dict.items() if args[0] in key]
         else:
             filtered_objs = [str(obj) for obj in obj_dict.values()]
         print(filtered_objs)
@@ -137,6 +139,7 @@ class HBNBCommand(cmd.Cmd):
         instance = obj_dict[key]
         setattr(instance, attr_name, attr_value)
         storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
