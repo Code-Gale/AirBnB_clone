@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Entry poiny for AirBnb terminal / command interpreter."""
+"""Entry point of AirBnb terminal / command interpreter."""
 
 import cmd
 from models.base_model import BaseModel
@@ -10,7 +10,7 @@ import json
 
 class HBNBCommand(cmd.Cmd):
 
-    """Class for the Airbnb terminal."""
+    """Class for the terminal."""
 
     prompt = "(hbnb) "
 
@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
         self._precmd(line)
 
     def _precmd(self, line):
-        """Intercepts commands to test for syntac of class"""
+        """Intercepts commands to test for class.syntax()"""
         match = re.search(r"^(\w*)\.(\w+)(?:\(([^)]*)\))$", line)
         if not match:
             return line
@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
                 for attribute, value in d.items():
                     if attribute in attributes:
                         value = attributes[attribute](value)
-                        setattr(storage.all()[key], attribute, value)
+                    setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
 
     def do_EOF(self, line):
