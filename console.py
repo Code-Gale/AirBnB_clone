@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for the entry point of the command interpreter."""
+"""Entry poiny for AirBnb terminal / command interpreter."""
 
 import cmd
 from models.base_model import BaseModel
@@ -10,18 +10,16 @@ import json
 
 class HBNBCommand(cmd.Cmd):
 
-    """Class for the command interpreter."""
+    """Class for the Airbnb terminal."""
 
     prompt = "(hbnb) "
 
     def default(self, line):
         """Catch commands if nothing else matches then."""
-        # print("DEF:::", line)
         self._precmd(line)
 
     def _precmd(self, line):
-        """Intercepts commands to test for class.syntax()"""
-        # print("PRECMD:::", line)
+        """Intercepts commands to test for syntac of class"""
         match = re.search(r"^(\w*)\.(\w+)(?:\(([^)]*)\))$", line)
         if not match:
             return line
