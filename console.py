@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Entry point of AirBnb terminal / command interpreter."""
+"""Module for entry point of AirBnb terminal / command interpreter."""
 
 import cmd
 from models.base_model import BaseModel
