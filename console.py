@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regular command line for AirBnB project.
+"""terminal for AirBnB project.
 """
 
 import cmd
